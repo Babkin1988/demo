@@ -1,0 +1,15 @@
+name: Test
+on: [push]
+jobs:
+  test-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Java installation
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+      - name: Build
+        run: mvn -B package --file pom.xml
