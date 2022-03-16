@@ -43,4 +43,10 @@ public class DemoApplication {
 	public ResponseEntity<String> index() {
 		return new ResponseEntity<>("INDEX", HttpStatus.OK);
 	}
+
+	@GetMapping(value = "/about")
+	public ResponseEntity<String> about() {
+		return new ResponseEntity<>("About", HttpStatus.OK);
+	}
+
 }
