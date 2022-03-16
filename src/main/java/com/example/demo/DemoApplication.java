@@ -3,6 +3,8 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,5 +37,10 @@ public class DemoApplication {
 	@GetMapping(value = "/resources")
 	public List<String> getResources() {
 		return resources;
+	}
+
+	@GetMapping(value = "/index")
+	public ResponseEntity<String> index() {
+		return new ResponseEntity<>("INDEX", HttpStatus.OK);
 	}
 }
